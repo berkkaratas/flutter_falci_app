@@ -1,6 +1,10 @@
 # falci_app
 
-A new Flutter project.
+
+
+
+<img src="https://raw.githubusercontent.com/berkkaratas/flutter_falci_app/main/github_images/img_1.png" width="300"/>
+<img src="https://raw.githubusercontent.com/berkkaratas/flutter_falci_app/main/github_images/img_2.png" width="300"/>
 
 ## Getting Started
 
