@@ -1,3 +1,6 @@
+import 'dart:math';
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -9,13 +12,17 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: Text('Falcı'),
-      ),
-      body: SafeArea(
-        child: Falim(),
+    return MaterialApp(
+      home: Scaffold(
+        backgroundColor: Color(0xffEB58FF),
+        appBar: AppBar(
+          backgroundColor: Color(0xffA539B4),
+          centerTitle: true,
+          title: Text('TIKLA FALIN GELSİN'),
+        ),
+        body: SafeArea(
+          child: Falim(),
+        ),
       ),
     );
   }
@@ -30,7 +37,6 @@ class Falim extends StatefulWidget {
 
 class _FalimState extends State<Falim> {
   List<String> yanitlar = [
-    'TIKLA FALIN GELSİN',
     'AŞK: Bugün, aşk ve ilişki hayatınızda biraz daha temkinli olmalısın. Onu her konuda doğru anlamda anladığından da emin misin?',
     'AŞK: Aşk ve ilişki hayatınızda hakimiyeti eline almak ve birlikteliğinizi dilediğiniz gibi yönlendirmek isteyebilirsin. Bu isteğinin denge içerisindeki bir ilişkiye ne şekilde fayda edeceğini gözden geçirmelisin.',
     'AŞK: Duygularınızın bugün biraz düzensiz olduğunu görebilirsiniz. Güne, daha önce hiç yapmadığınız bir şekilde başlamanızı sağlayan doğal bir elektrik hissi var. Kalbiniz her zaman doğruyu söyler.',
@@ -47,9 +53,124 @@ class _FalimState extends State<Falim> {
     'TAVSİYE: Bugün sadece işine odaklan, dikkatini dağıtacak her türlü nesne ve sosyal medyadan uzaklaşmak kendini daha mutlu hissettirebilir',
     'TAVSİYE: Bugün tek başına biraz yürüyüş yap, çocukluğunda dinlediğin şarkıları aç ve o zamanlar oynadığın oyunları hayal et'
   ];
-
+  String answer = 'TIKLA FALIN GELSİN';
+  var rand = Random();
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Center(
+      child: Column(
+        children: [
+          SizedBox(
+            height: 10,
+          ),
+          Expanded(
+            flex: 4,
+            child: Image.asset('assets/fal.png'),
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          Expanded(
+            flex: 1,
+            child: Container(
+              width: 300,
+              child: FlatButton(
+                color: Colors.white,
+                onPressed: () {
+                  setState(() {
+                    answer = yanitlar[rand.nextInt(5)];
+                  });
+                },
+                child: const ListTile(
+                  leading: Icon(
+                    CupertinoIcons.heart,
+                    color: Colors.red,
+                  ),
+                  title: Text(
+                    'Aşk Durumu',
+                    style: TextStyle(
+                      color: Colors.red,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          Expanded(
+            flex: 1,
+            child: Container(
+              width: 300,
+              child: FlatButton(
+                color: Colors.white,
+                onPressed: () {
+                  setState(() {
+                    answer = yanitlar[rand.nextInt(5) + 5];
+                  });
+                },
+                child: const ListTile(
+                  leading: Icon(
+                    CupertinoIcons.cart,
+                    color: Colors.green,
+                  ),
+                  title: Text(
+                    'Para Durumu',
+                    style: TextStyle(
+                      color: Colors.green,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          Expanded(
+            flex: 1,
+            child: Container(
+              width: 300,
+              child: FlatButton(
+                color: Colors.white,
+                onPressed: () {
+                  setState(() {
+                    answer = yanitlar[rand.nextInt(5) + 10];
+                  });
+                },
+                child: const ListTile(
+                  leading: Icon(
+                    CupertinoIcons.chat_bubble_text,
+                    color: Colors.blue,
+                  ),
+                  title: Text(
+                    'Tavsiye Durumu',
+                    style: TextStyle(
+                      color: Colors.blue,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+          Expanded(
+            flex: 4,
+            child: Container(
+              width: 350,
+              child: Center(
+                child: Text(
+                  answer,
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 16,
+                  ),
+                ),
+              ),
+            ),
+          )
+        ],
+      ),
+    );
   }
 }
