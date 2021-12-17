@@ -2,10 +2,10 @@
 
 
 
-
-<img src="https://raw.githubusercontent.com/berkkaratas/flutter_falci_app/main/github_images/img_1.png" style="display: inline-block;" width="300"/>
-<img src="https://raw.githubusercontent.com/berkkaratas/flutter_falci_app/main/github_images/img_2.png" width="300"/>
-
+<div style="text-align: center;"> 
+  <img src="https://raw.githubusercontent.com/berkkaratas/flutter_falci_app/main/github_images/img_1.png" width="300"/>
+  <img src="https://raw.githubusercontent.com/berkkaratas/flutter_falci_app/main/github_images/img_2.png" width="300"/>
+</div>
 ## Getting Started
 
 This project is a starting point for a Flutter application.
